@@ -157,7 +157,7 @@
 			</div>
 			<video
 				class="absolute inset-0 z-10 h-full w-full object-cover sm:rounded-xl"
-				src="/videos/{VIDEOS_BY_PLACE[getVideoByCountry(location.country)].day}"
+				src="/videos/{VIDEOS_BY_PLACE[getVideoByCountry(location.country)][current.is_day ? "day" : "night"]}"
 				muted
 				autoplay
 				loop
