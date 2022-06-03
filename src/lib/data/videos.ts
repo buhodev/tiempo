@@ -14,35 +14,15 @@ export const VIDEOS_BY_PLACE: IVideoRecord = {
 		sunset: 'China-sunset.mp4',
 		night: 'China-night-s.mp4'
 	},
-	city: {
-		day: 'City-day.mp4',
-		sunset: 'City-sunset-9.mp4',
-		night: 'City-night-c.mp4'
-	},
-	desert: {
-		day: 'Snow/Desert-day-T.mp4',
-		sunset: 'Snow/Desert-sunset-B.mp4',
-		night: 'Snow/Desert-night-6.mp4'
-	},
 	egypt: {
 		day: 'Egypt-day-D.mp4',
 		sunset: 'Egypt-sunset-n.mp4',
 		night: 'Egypt-night-0.mp4'
 	},
-	forest: {
-		day: 'Forest-day-Q.mp4',
-		sunset: 'Forest-sunset-4.mp4',
-		night: 'Forest-night-A.mp4'
-	},
 	france: {
 		day: 'France-day.mp4',
 		sunset: 'France-sunset-i.mp4',
 		night: 'France-night-4.mp4'
-	},
-	hillsAndMountains: {
-		day: 'HillsandMountains-day.mp4',
-		sunset: 'HillsandMountains-sunset.mp4',
-		night: 'HillsandMountains-night.mp4'
 	},
 	india: {
 		day: 'India-day.mp4',
@@ -69,11 +49,6 @@ export const VIDEOS_BY_PLACE: IVideoRecord = {
 		sunset: 'Mt.FujiJapan-sunset.mp4',
 		night: 'Mt.FujiJapan-night.mp4'
 	},
-	lake: {
-		day: 'Lake-day-J.mp4',
-		sunset: 'Lake-sunset-L.mp4',
-		night: 'Lake-night-N.mp4'
-	},
 	london: {
 		day: 'London-day.mp4',
 		sunset: 'London-sunset.mp4',
@@ -83,6 +58,36 @@ export const VIDEOS_BY_PLACE: IVideoRecord = {
 		day: 'Philippines-day.mp4',
 		sunset: 'Philippines-sunset.mp4',
 		night: 'Philippines-night.mp4'
+	},
+	usa: {
+		day: 'USA-day.mp4',
+		sunset: 'USA-sunset-L.mp4',
+		night: 'USA-night.mp4'
+	},
+	city: {
+		day: 'City-day.mp4',
+		sunset: 'City-sunset-9.mp4',
+		night: 'City-night-c.mp4'
+	},
+	desert: {
+		day: 'Snow/Desert-day-T.mp4',
+		sunset: 'Snow/Desert-sunset-B.mp4',
+		night: 'Snow/Desert-night-6.mp4'
+	},
+	forest: {
+		day: 'Forest-day-Q.mp4',
+		sunset: 'Forest-sunset-4.mp4',
+		night: 'Forest-night-A.mp4'
+	},
+	hillsAndMountains: {
+		day: 'HillsandMountains-day.mp4',
+		sunset: 'HillsandMountains-sunset.mp4',
+		night: 'HillsandMountains-night.mp4'
+	},
+	lake: {
+		day: 'Lake-day-J.mp4',
+		sunset: 'Lake-sunset-L.mp4',
+		night: 'Lake-night-N.mp4'
 	},
 	seaTheLighthouse: {
 		day: 'SeaLighthouse-day.mp4',
@@ -94,11 +99,6 @@ export const VIDEOS_BY_PLACE: IVideoRecord = {
 		sunset: 'SeaShip-sunset.mp4',
 		night: 'SeaShip-night.mp4'
 	},
-	snow: {
-		day: 'snow-day.mp4',
-		sunset: 'snow-sunset-2.mp4',
-		night: 'snow-night.mp4'
-	},
 	street: {
 		day: 'Street-day-X.mp4',
 		sunset: 'Street-sunset-z.mp4',
@@ -109,15 +109,15 @@ export const VIDEOS_BY_PLACE: IVideoRecord = {
 		sunset: 'Tropical-sunset.mp4',
 		night: 'Tropical-night.mp4'
 	},
-	usa: {
-		day: 'USA-day.mp4',
-		sunset: 'USA-sunset-L.mp4',
-		night: 'USA-night.mp4'
-	},
 	valley: {
 		day: 'Valley-day-H.mp4',
 		sunset: 'Valley-sunset.mp4',
 		night: 'Valley-night-B.mp4'
+	},
+	snow: {
+		day: 'snow-day.mp4',
+		sunset: 'snow-sunset-2.mp4',
+		night: 'snow-night.mp4'
 	}
 };
 
