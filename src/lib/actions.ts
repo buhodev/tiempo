@@ -1,11 +1,11 @@
 // Shortcut Demo <https://svelte.dev/repl/acd92c9726634ec7b3d8f5f759824d15?version=3.48.0>
-export const shortcut = (node, params) => {
+export const shortcut = (node: HTMLElement, params: any) => {
 	let handler;
 	const removeHandler = () => window.removeEventListener('keydown', handler),
 		setHandler = () => {
 			removeHandler();
 			if (!params) return;
-			handler = (e) => {
+			handler = (e: KeyboardEvent) => {
 				if (
 					!!params.alt != e.altKey ||
 					!!params.shift != e.shiftKey ||
