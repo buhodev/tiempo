@@ -6,13 +6,13 @@
 [![Leaflet badge](https://img.shields.io/badge/Leaflet-1.8.0-green)](https://leafletjs.com/)
 [![TypeScript badge](https://img.shields.io/badge/TypeScript-4.6.2-blue)](https://www.typescriptlang.org/)
 [![Playwright badge](https://img.shields.io/badge/Playwright-1.21.0-green)](https://playwright.dev/)
-[![Vercel badge](https://vercelbadge.vercel.app/api/carlosivanchuk/weather-app)](https://rapidapi-weather.vercel.app/)
+[![Vercel badge](https://vercelbadge.vercel.app/api/buhodev/tiempo)](https://tiempo.vercel.app/)
 
 </div>
 
-# RapidAPI Weather
+# Tiempo
 
-Weather App submission for the [MiduDev's](https://twitch.tv/midudev) RapidAPI Hackaton. The weather data is retrieved from [RapidAPI](https://rapidapi.com/) using the [WeatherAPI's](https://rapidapi.com/weatherapi/api/weatherapi-com/) `current`, `forecast` and `search/autocomplete` APIs.
+Tiempo is a weather app submission for the RapidAPI Hackathon hosted by [MiduDev](https://twitch.tv/midudev). The weather data is retrieved from [RapidAPI](https://rapidapi.com/) using the [WeatherAPI's](https://rapidapi.com/weatherapi/api/weatherapi-com/) `current`, `forecast` and `search/autocomplete` endpoints.
 
 ## 🦾 Technologies
 
@@ -37,7 +37,7 @@ Weather App submission for the [MiduDev's](https://twitch.tv/midudev) RapidAPI H
 Download the repository, open the folder and install the dependencies:
 
 ```bash
-git clone https://github.com/CarlosIvanchuk/weather-app.git
+git clone https://github.com/buhodev/tiempo.git
 cd weather-app
 npm install # or pnpm install
 ```
@@ -68,7 +68,7 @@ _📢 You can get your keys on [RapidApi](https://rapidapi.com/weatherapi/api/we
 
 Contributions, issues and feature requests are welcome!
 <br />
-Feel free to check the [issues page](https://github.com/CarlosIvanchuk/weather-app/issues).
+Feel free to check the [issues page](https://github.com/buhodev/tiempo/issues).
 
 ## ✨ Credits
 
