@@ -63,11 +63,11 @@
 
 			<!-- Github Button (Desktop) -->
 			<a
-				href="https://github.com/carlosivanchuk/weather-app"
+				href="https://github.com/buhodev/tiempo"
 				rel="noopener"
 				target="_blank"
 				class="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
-				><span class="sr-only">RapidAPI Weather on GitHub</span><svg
+				><span class="sr-only">Tiempo App on GitHub</span><svg
 					viewBox="0 0 16 16"
 					class="h-5 w-5"
 					fill="currentColor"

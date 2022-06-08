@@ -149,7 +149,7 @@
 		<li>
 			<a
 				on:click={overlay.close}
-				href="https://github.com/CarlosIvanchuk/weather-app#readme"
+				href="https://github.com/buhodev/tiempo#readme"
 				target="_blank"
 				class="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 transition duration-75 hover:bg-slate-100 dark:text-white dark:hover:bg-slate-700"
 			>
