@@ -5,24 +5,44 @@
 
 	export let isOpen = false;
 
-	let settingOptions = [
-		{
-			name: 'Unidades de temperatura',
-			settingId: 'tempUnit',
-			options: [
-				{ id: 'temp_c', text: '°C' },
-				{ id: 'temp_f', text: '°F' }
-			]
-		},
-		{
-			name: 'Unidades de velocidad de viento',
-			settingId: 'windVelUnit',
-			options: [
-				{ id: 'wind_kph', text: 'km/h' },
-				{ id: 'wind_mph', text: 'mph' }
-			]
-		}
-	];
+	let settingOptions = {
+		en: [
+			{
+				name: 'Temperature unit',
+				settingId: 'tempUnit',
+				options: [
+					{ id: 'temp_c', text: '°C' },
+					{ id: 'temp_f', text: '°F' }
+				]
+			},
+			{
+				name: 'Wind velocity unit',
+				settingId: 'windVelUnit',
+				options: [
+					{ id: 'wind_kph', text: 'km/h' },
+					{ id: 'wind_mph', text: 'mph' }
+				]
+			}
+		],
+		es: [
+			{
+				name: 'Unidades de temperatura',
+				settingId: 'tempUnit',
+				options: [
+					{ id: 'temp_c', text: '°C' },
+					{ id: 'temp_f', text: '°F' }
+				]
+			},
+			{
+				name: 'Unidades de velocidad de viento',
+				settingId: 'windVelUnit',
+				options: [
+					{ id: 'wind_kph', text: 'km/h' },
+					{ id: 'wind_mph', text: 'mph' }
+				]
+			}
+		]
+	};
 </script>
 
 <Dialog bind:isOpen>
@@ -30,7 +50,7 @@
 		<DialogTitle as="h3" class="text-lg text-gray-900 dark:text-white">Settings</DialogTitle>
 
 		<ul class="mt-4 space-y-4 border-t border-slate-200 pt-6 dark:border-slate-700">
-			{#each settingOptions as { name, settingId, options } (settingId)}
+			{#each settingOptions.en as { name, settingId, options } (settingId)}
 				<li class="flex items-center justify-between">
 					<label for={settingId} class="font-medium leading-5">{name}</label>
 					<select
