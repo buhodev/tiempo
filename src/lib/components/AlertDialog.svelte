@@ -12,7 +12,12 @@
 		>
 
 		<div class="mt-4 border-slate-200 dark:border-slate-700">
-			<img class="rounded-md" src="/charlesdeluvio-unsplash.jpg" alt="An ashamed puppy" />
+			<picture class="rounded-md">
+				<source type="image/avif" srcset="/charlesdeluvio-unsplash.avif" />
+				<source type="image/webp" srcset="/charlesdeluvio-unsplash.webp" />
+				<source type="image/jpeg" srcset="/charlesdeluvio-unsplash.jpg" />
+				<img src="/charlesdeluvio-unsplash.jpg" alt="An ashamed puppy" />
+			</picture>
 		</div>
 
 		<div class="mt-6">
