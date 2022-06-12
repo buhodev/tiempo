@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Saved Locations - RapidAPI Weather</title>
+	<title>Saved Locations - Tiempo | Weather & Forecast app</title>
 	<meta name="description" content="" />
 </svelte:head>
 

@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-	<title>{status} - RapidAPI Weather</title>
+	<title>{status} Tiempo | Weather & Forecast app</title>
 	<meta name="description" content="" />
 </svelte:head>
 

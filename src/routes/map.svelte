@@ -35,7 +35,7 @@
 </script>
 
 <svelte:head>
-	<title>Map - RapidAPI Weather</title>
+	<title>Map - Tiempo | Weather & Forecast app</title>
 	<meta name="description" content="" />
 </svelte:head>
 
