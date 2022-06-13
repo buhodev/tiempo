@@ -135,7 +135,7 @@
 	/>
 </svelte:head>
 
-<div class="flex min-w-0 flex-1 flex-shrink flex-col pb-6 dark:bg-slate-900">
+<div class="flex min-w-0 flex-1 flex-shrink flex-col dark:bg-slate-900">
 	<div class="flex items-center border-b border-slate-900/10 dark:border-slate-600 md:border-0">
 		<Header title={`${location.name}, ${location.country}`} />
 	</div>
