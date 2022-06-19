@@ -1,5 +1,13 @@
 import { writable } from 'svelte/store';
 
+type ToastOptions = {
+	id?: number;
+	type: 'error' | 'success' | 'info';
+	dismissible?: boolean;
+	timeout: number;
+	message: string;
+};
+
 function createToggle() {
 	const { subscribe, set } = writable(false);
 
@@ -16,10 +24,10 @@ export const settings = writable({ tempUnit: 'temp_c', windVelUnit: 'wind_kph' }
 
 export const toasts = writable([]);
 
-export const addToast = (toast) => {
+export const addToast = (toast: ToastOptions) => {
 	const id = Math.floor(Math.random() * 10000);
 
-	const defaults = {
+	const defaults: ToastOptions = {
 		id,
 		type: 'info',
 		dismissible: false,
