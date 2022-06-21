@@ -3,6 +3,7 @@
 	import ThemeMenu from '$lib/components/ThemeMenu.svelte';
 	import { overlay } from '$lib/stores';
 	import SearchDialog from '$lib/components/SearchDialog.svelte';
+	import Toasts from '$lib/components/Toasts.svelte';
 
 	export let title: string;
 
@@ -12,6 +13,8 @@
 		isOpen = true;
 	}
 </script>
+
+<Toasts />
 
 <header
 	class="relative mx-4 mt-4 mb-4 flex flex-1 items-center justify-between dark:bg-slate-900 sm:px-2 md:mt-8 lg:mt-6 lg:px-4"
