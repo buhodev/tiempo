@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Toast from '$lib/components/Toast.svelte';
-	import { dismissToast, toasts } from '$lib/stores';
+	import { dismissToast, toasts } from '$lib/stores/toast';
 </script>
 
 {#if $toasts}

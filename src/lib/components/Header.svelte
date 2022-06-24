@@ -1,10 +1,10 @@
 <script lang="ts">
 	import SearchButton from '$lib/components/SearchButton.svelte';
 	import ThemeMenu from '$lib/components/ThemeMenu.svelte';
-	import { overlay } from '$lib/stores';
+	import { overlay } from '$lib/stores/overlay';
 	import SearchDialog from '$lib/components/SearchDialog.svelte';
 	import Toasts from '$lib/components/Toasts.svelte';
-	import { addToast } from '$lib/stores';
+	import { addToast } from '$lib/stores/toast';
 
 	export let title: string;
 

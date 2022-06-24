@@ -1,6 +1,6 @@
 <script>
 	import NavContent from './NavContent.svelte';
-	import { overlay } from '$lib/stores';
+	import { overlay } from '$lib/stores/overlay';
 	import { fly, fade } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
 </script>

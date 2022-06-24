@@ -36,7 +36,7 @@
 	import WeatherIcons from '$lib/components/WeatherIcons.svelte';
 
 	import { VIDEOS_BY_PLACE } from '$lib/data/videos';
-	import { settings } from '$lib/stores/index';
+	import { settings } from '$lib/stores/settings';
 
 	export let location: Location, current: Current, forecastday: ForecastDay;
 

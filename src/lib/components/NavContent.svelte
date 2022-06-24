@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import { overlay } from '$lib/stores';
+	import { overlay } from '$lib/stores/overlay';
 	import Logo from './Logo.svelte';
 	import SettingsDialog from '$lib/components/SettingsDialog.svelte';
 	import ThemeMenu from './ThemeMenu.svelte';
