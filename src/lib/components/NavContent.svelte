@@ -4,7 +4,7 @@
 	import Logo from './Logo.svelte';
 	import SettingsDialog from '$lib/components/SettingsDialog.svelte';
 	import ThemeMenu from './ThemeMenu.svelte';
-	import AlertDialog from './AlertDialog.svelte';
+	import SavedLocationsDialog from '$lib/components/SavedLocationsDialog.svelte';
 	import { shortcut } from '$lib/actions';
 
 	let isOpen = false;
@@ -13,10 +13,10 @@
 		isOpen = true;
 	}
 
-	let isAlertOpen = false;
+	let isSavedLocationsOpen = false;
 
-	function openAlertModal() {
-		isAlertOpen = true;
+	function openSavedLocationsModal() {
+		isSavedLocationsOpen = true;
 	}
 </script>
 
@@ -88,7 +88,7 @@
 		</li>
 		<li>
 			<button
-				on:click={openAlertModal}
+				on:click={openSavedLocationsModal}
 				class="group flex w-full items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-slate-100 dark:text-white dark:hover:bg-slate-700"
 			>
 				<svg
@@ -205,4 +205,4 @@
 
 <SettingsDialog bind:isOpen />
 
-<AlertDialog bind:isOpen={isAlertOpen} />
+<SavedLocationsDialog bind:isSavedLocationsOpen />
