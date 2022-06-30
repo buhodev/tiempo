@@ -6,6 +6,7 @@
 	import ThemeMenu from './ThemeMenu.svelte';
 	import SavedLocationsDialog from '$lib/components/SavedLocationsDialog.svelte';
 	import { shortcut } from '$lib/actions';
+	import { savedLocations } from '$lib/stores/savedLocations';
 
 	let isOpen = false;
 
@@ -116,7 +117,7 @@
 				<div class="relative inline-flex w-full flex-1" />
 				<span
 					class="ml-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-blue-200 p-3 text-sm font-medium text-blue-600 dark:bg-blue-800 dark:text-blue-100"
-					>3</span
+					>{$savedLocations.length}</span
 				>
 			</button>
 		</li>
