@@ -10,7 +10,9 @@
 	<svelte:fragment let:closeModal>
 		<DialogTitle as="h3" class="text-lg text-gray-900 dark:text-white">Saved Locations</DialogTitle>
 
-		<ul class="mt-4 space-y-4 border-t border-slate-200 pt-6 dark:border-slate-700">
+		<ul
+			class="mt-4 max-h-96 space-y-4 overflow-y-auto border-t border-slate-200 pt-6 dark:border-slate-700"
+		>
 			{#each $savedLocations as { name, id } (id)}
 				<li class="flex items-center justify-between">
 					<a
