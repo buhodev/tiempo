@@ -2,6 +2,7 @@
 	import SearchButton from '$lib/components/SearchButton.svelte';
 	import ThemeMenu from '$lib/components/ThemeMenu.svelte';
 	import { overlay } from '$lib/stores/overlay';
+	import SearchDialog from '$lib/components/SearchDialog.svelte';
 	import Toasts from '$lib/components/Toasts.svelte';
 	import { addLocation } from '$lib/stores/savedLocations';
 
@@ -87,3 +88,5 @@
 		</div>
 	</div>
 </header>
+
+<SearchDialog bind:isOpen />
