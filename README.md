@@ -14,6 +14,8 @@
 
 Tiempo is a weather app submission for the RapidAPI Hackathon hosted by [MiduDev](https://twitch.tv/midudev). The weather data is retrieved from [RapidAPI](https://rapidapi.com/) using the [WeatherAPI's](https://rapidapi.com/weatherapi/api/weatherapi-com/) `current`, `forecast` and `search/autocomplete` endpoints.
 
+![](/static/tiempo-screenshot.png)
+
 ## 🦾 Technologies
 
 - [Svelte](https://svelte.dev/)
