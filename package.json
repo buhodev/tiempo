@@ -2,11 +2,11 @@
 	"name": "weather-app",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "svelte-kit dev",
-		"build": "svelte-kit build",
-		"package": "svelte-kit package",
-		"preview": "svelte-kit preview",
-		"prepare": "svelte-kit sync",
+		"dev": "vite dev",
+		"build": "vite build",
+		"package": "vite package",
+		"preview": "vite preview",
+		"prepare": "vite sync",
 		"test": "playwright test",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
@@ -18,7 +18,7 @@
 		"@rgossiaux/svelte-headlessui": "1.0.2",
 		"@sveltejs/adapter-auto": "1.0.0-next.50",
 		"@sveltejs/adapter-vercel": "1.0.0-next.58",
-		"@sveltejs/kit": "1.0.0-next.347",
+		"@sveltejs/kit": "1.0.0-next.405",
 		"@tailwindcss/forms": "0.5.2",
 		"@types/leaflet": "1.7.10",
 		"@typescript-eslint/eslint-plugin": "5.25.0",
@@ -38,7 +38,8 @@
 		"svelte-preprocess": "4.10.6",
 		"tailwindcss": "3.0.24",
 		"tslib": "2.4.0",
-		"typescript": "4.6.4"
+		"typescript": "4.6.4",
+		"vite": "4.0.0"
 	},
 	"type": "module"
 }

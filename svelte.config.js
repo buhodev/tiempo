@@ -3,20 +3,15 @@ import adapter from '@sveltejs/adapter-vercel';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	kit: {
-		adapter: adapter(),
-		vite: {
-			define: {
-				'process.env': process.env
-			}
-		}
-	},
+  kit: {
+    adapter: adapter()
+  },
 
-	preprocess: [
-		preprocess({
-			postcss: true
-		})
-	]
+  preprocess: [
+    preprocess({
+      postcss: true
+    })
+  ]
 };
 
 export default config;
