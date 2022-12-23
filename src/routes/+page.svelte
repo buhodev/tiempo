@@ -1,36 +1,7 @@
-<script context="module">
-	/** @type {import('./__types/[slug]').Load} */
-	export async function load({ fetch, url }) {
-		const { searchParams } = url;
-		const query = searchParams.get('q');
 
-		const res = await fetch(`/api/forecast?${query == null ? '' : 'q=' + query}`);
-
-		const { data, ok, error } = await res.json();
-
-		if (!ok) {
-			return {
-				status: 400,
-				error: error.message
-			};
-		}
-
-		const {
-			current,
-			location,
-			forecast: { forecastday }
-		} = data;
-
-		return {
-			status: 200,
-			props: { current, location, forecastday }
-		};
-	}
-</script>
 
 <script lang="ts">
 	import type { Location, Current, ForecastDay } from '$lib/types';
-
 	import Header from '$lib/components/Header.svelte';
 	import AlertDialog from '$lib/components/AlertDialog.svelte';
 	import WeatherIcons from '$lib/components/WeatherIcons.svelte';
@@ -38,7 +9,8 @@
 	import { VIDEOS_BY_PLACE } from '$lib/data/videos';
 	import { settings } from '$lib/stores/settings';
 
-	export let location: Location, current: Current, forecastday: ForecastDay;
+	// export let location: Location, current: Current, forecastday: ForecastDay;
+	export let data;
 
 	let isOpen = false;
 
@@ -89,19 +61,19 @@
 			title: 'Wind',
 			description: 'Today wind speed',
 			value: `${
-				$settings.windVelUnit == 'wind_kph' ? current.wind_kph + 'km/h' : current.wind_mph + 'mph'
+				$settings.windVelUnit == 'wind_kph' ? data.current.wind_kph + 'km/h' : data.current.wind_mph + 'mph'
 			}`
 		},
-		{ title: 'Pressure', description: 'Today Pressure', value: `${current.pressure_mb}mb` },
+		{ title: 'Pressure', description: 'Today Pressure', value: `${data.current.pressure_mb}mb` },
 		{
 			title: 'Rain Chance',
 			description: 'Today rain chance',
-			value: `${forecastday[0].hour[8].chance_of_rain}%`
+			value: `${data.forecastday[0].hour[8].chance_of_rain}%`
 		},
 		{
 			title: 'Snow Chance',
 			description: 'Today snow chance',
-			value: `${forecastday[0].hour[8].chance_of_snow}%`
+			value: `${data.forecastday[0].hour[8].chance_of_snow}%`
 		}
 	];
 
@@ -124,7 +96,7 @@
 		}
 	}
 
-	formatDay(current.last_updated);
+	formatDay(data.current.last_updated);
 </script>
 
 <svelte:head>
@@ -137,7 +109,7 @@
 
 <div class="flex min-w-0 flex-1 flex-shrink flex-col dark:bg-slate-900">
 	<div class="flex items-center border-b border-slate-900/10 dark:border-slate-600 md:border-0">
-		<Header title={`${location.name}, ${location.country}`} />
+		<Header title={`${data.location.name}, ${data.location.country}`} />
 	</div>
 
 	<div class="no-scrollbar flex-1 space-y-4 overflow-y-auto dark:text-white sm:px-8 sm:pt-8">
@@ -146,19 +118,19 @@
 				<div
 					class="z-20 flex w-auto flex-col items-center justify-center rounded-xl  bg-white/20 p-4 backdrop-blur-sm"
 				>
-					<h1 class="hidden text-center text-xl lg:inline-block">{location.name}</h1>
+					<h1 class="hidden text-center text-xl lg:inline-block">{data.location.name}</h1>
 					<div class="text-8xl font-bold">
-						{$settings.tempUnit == 'temp_c' ? current.temp_c : current.temp_f}<span
+						{$settings.tempUnit == 'temp_c' ? data.current.temp_c : data.current.temp_f}<span
 							class="align-super text-6xl">°</span
 						>
 					</div>
-					<p class="text-xl ">{current.condition.text}</p>
+					<p class="text-xl ">{data.current.condition.text}</p>
 				</div>
 			</div>
 			<video
 				class="absolute inset-0 z-10 h-full w-full object-cover sm:rounded-xl"
-				src="/videos/{VIDEOS_BY_PLACE[getVideoByCountry(location.country)][
-					current.is_day ? 'day' : 'night'
+				src="/videos/{VIDEOS_BY_PLACE[getVideoByCountry(data.location.country)][
+					data.current.is_day ? 'day' : 'night'
 				]}"
 				muted
 				autoplay
@@ -185,7 +157,7 @@
 									x="0px"
 									y="0px"
 									viewBox="0 0 30 30"
-									style="enable-background:new 0 0 30 30; transform: rotate({current.wind_degree}deg)"
+									style="enable-background:new 0 0 30 30; transform: rotate({data.current.wind_degree}deg)"
 									class="h-10 w-10 fill-current text-slate-600 dark:text-sky-400"
 									xml:space="preserve"
 								>
@@ -284,7 +256,7 @@
 			<div>
 				<h2 class="dark:text-white">Today</h2>
 				<div class="mt-4 flex space-x-4 overflow-y-auto">
-					{#each forecastday[0].hour as { time, temp_c, temp_f, is_day, condition }, index}
+					{#each data.forecastday[0].hour as { time, temp_c, temp_f, is_day, condition }, index}
 						<div
 							class:bg-sky-100={index == 0}
 							class:dark:bg-sky-800={index == 0}
@@ -302,7 +274,7 @@
 				</div>
 			</div>
 
-			{#each forecastday as { day, hour }, index}
+			{#each data.forecastday as { day, hour }, index}
 				<div class="relative flex items-center justify-between rounded-lg py-2">
 					<div class="flex flex-col">
 						<span class="dark:text-white">{formatDay(hour[1].time)}</span>

@@ -1,3 +1,4 @@
+import { json as json$1 } from '@sveltejs/kit';
 import type { RequestEvent } from '@sveltejs/kit';
 import type { Location, Current, Forecast } from '$lib/types';
 
@@ -21,60 +22,54 @@ async function getWeatherData({ endpoint, query, lang }) {
 	return await response.json();
 }
 
-/** @type {import('./__types/[id]').RequestHandler} */
-export async function get(event: RequestEvent) {
+/** @type {import('./$types').RequestHandler} */
+export async function GET(event: RequestEvent) {
 	const {
-		clientAddress,
+		getClientAddress,
 		params,
 		url: { searchParams }
 	} = event;
-	const query = searchParams.get('q') ?? clientAddress;
+	const query = searchParams.get('q') ?? getClientAddress;
 	const lang = searchParams.get('lang') ?? 'es';
 	const { endpoint } = params;
 
 	if (!ENDPOINTS.includes(endpoint)) {
-		return {
-			status: 400,
-			body: {
-				ok: false,
-				error: {
-					code: 1005,
-					message: 'API request url is invalid'
-				}
+		return json$1({
+			ok: false,
+			error: {
+				code: 1005,
+				message: 'API request url is invalid'
 			}
-		};
+		}, {
+			status: 400
+		});
 	}
 
 	try {
 		const data = await getWeatherData({ endpoint, query, lang });
 
 		if (data?.error) {
-			return {
-				status: 400,
-				body: {
-					ok: false,
-					error: data.error
-				}
-			};
+			return json$1({
+				ok: false,
+				error: data.error
+			}, {
+				status: 400
+			});
 		}
 
-		return {
-			status: 200,
-			body: {
-				ok: true,
-				data
-			}
-		};
+		return json$1({
+			ok: true,
+			data
+		});
 	} catch (error) {
-		return {
-			status: 400,
-			body: {
-				ok: false,
-				error: {
-					code: 0,
-					message: 'Request failed'
-				}
+		return json$1({
+			ok: false,
+			error: {
+				code: 0,
+				message: 'Request failed'
 			}
-		};
+		}, {
+			status: 400
+		});
 	}
 }
