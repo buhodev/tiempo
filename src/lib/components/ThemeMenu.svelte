@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Menu, MenuButton, MenuItem, MenuItems } from '@rgossiaux/svelte-headlessui';
-	import themeStore, { setTheme } from 'svelte-themes';
+	import themeStore, { setTheme } from '$lib/components/SvelteThemes/index';
 	import { scale } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
 </script>
