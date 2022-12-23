@@ -1,5 +1,5 @@
 
-import { error as $error } from '@sveltejs/kit';
+import { error as $error, redirect } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch, url }) {
@@ -9,6 +9,8 @@ export async function load({ fetch, url }) {
 	const res = await fetch(`/api/current?${query == null ? '' : 'q=' + query}`);
 
 	const { data, ok, error } = await res.json();
+
+	if(query == null) throw redirect(307, `/map?q=${data.location.name}`)
 
 	if (!ok) {
 		console.log(error);
