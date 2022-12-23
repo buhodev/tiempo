@@ -30,7 +30,7 @@ export async function GET(event: RequestEvent) {
 		url: { searchParams }
 	} = event;
 	const query = searchParams.get('q') ?? getClientAddress();
-	const lang = searchParams.get('lang') ?? 'es';
+	const lang = searchParams.get('lang') ?? 'en';
 	const { endpoint } = params;
 
 	if (!ENDPOINTS.includes(endpoint)) {
