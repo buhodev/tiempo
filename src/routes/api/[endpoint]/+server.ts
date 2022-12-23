@@ -29,7 +29,7 @@ export async function GET(event: RequestEvent) {
 		params,
 		url: { searchParams }
 	} = event;
-	const query = searchParams.get('q') ?? getClientAddress;
+	const query = searchParams.get('q') ?? getClientAddress();
 	const lang = searchParams.get('lang') ?? 'es';
 	const { endpoint } = params;
 
