@@ -70,9 +70,9 @@ export const VIDEOS_BY_PLACE: IVideoRecord = {
 		night: 'City-night-c.mp4'
 	},
 	desert: {
-		day: 'Snow/Desert-day-T.mp4',
-		sunset: 'Snow/Desert-sunset-B.mp4',
-		night: 'Snow/Desert-night-6.mp4'
+		day: 'Desert-day-T.mp4',
+		sunset: 'Desert-sunset-B.mp4',
+		night: 'Desert-night-6.mp4'
 	},
 	forest: {
 		day: 'Forest-day-Q.mp4',
