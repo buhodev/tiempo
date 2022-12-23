@@ -2,8 +2,10 @@
 	import SearchButton from '$lib/components/SearchButton.svelte';
 	import ThemeMenu from '$lib/components/ThemeMenu.svelte';
 	import { overlay } from '$lib/stores/overlay';
+	import SearchDialog from '$lib/components/SearchDialog.svelte';
 	import Toasts from '$lib/components/Toasts.svelte';
 	import { addLocation } from '$lib/stores/savedLocations';
+	import { page } from '$app/stores';
 
 	export let title: string;
 
@@ -62,7 +64,7 @@
 	<div class="relative ml-auto hidden items-center lg:flex">
 		<button
 			class="inline-flex justify-center rounded-md border border-transparent bg-blue-200 px-4 py-1 text-sm font-medium text-sky-900 hover:bg-blue-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:bg-blue-600 dark:text-sky-100 dark:focus-visible:ring-offset-slate-800"
-			on:click={() => addLocation({ name: 'Test' })}>save</button
+			on:click={() => addLocation({ name: $page.url.searchParams.get('q') })}>save</button
 		>
 		<div class="ml-6 flex items-center border-l border-slate-900/10 pl-6 dark:border-slate-600">
 			<!-- Theme Dropdown (Desktop) -->
@@ -87,3 +89,5 @@
 		</div>
 	</div>
 </header>
+
+<SearchDialog bind:isOpen />
